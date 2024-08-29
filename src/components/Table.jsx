@@ -12,9 +12,14 @@ const Table = ({ sat }) => {
         </tr>
       </thead>
      <tbody>
-      <tr>
-        <td>Row Data TBD</td>
+      {sat.map((data)=>(
+      <tr key = {data.id}> 
+        <td>{data.name}</td>
+        <td>{data.type}</td>
+        <td>{data.launchDate}</td>
+        <td>{data.operational ? "Active" :  "Inactive"}</td>
       </tr>
+      ))}
      </tbody>
    </table>
   );
